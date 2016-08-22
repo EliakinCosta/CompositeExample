@@ -18,14 +18,14 @@ void GraphicsComposite::add(GraphicsComponent *component)
     m_graphics->append(component);
 }
 
-void GraphicsComposite::remove(QString componentName)
+void GraphicsComposite::remove(GraphicsComponent *component)
 {
-    m_graphics->removeAll(this->componentByName(componentName));
+    m_graphics->removeAll(component);
 }
 
-GraphicsComponent *GraphicsComposite::findChild(QString componentName)
+GraphicsComponent *GraphicsComposite::findChild(int componentIndex)
 {
-    return this->componentByName(componentName);
+    return m_graphics->at(componentIndex);
 }
 
 QList<GraphicsComponent *> *GraphicsComposite::findChildren()
@@ -39,16 +39,4 @@ void GraphicsComposite::print()
     {
         component->print();
     }
-}
-
-GraphicsComponent *GraphicsComposite::componentByName(QString componentName)
-{
-    foreach (GraphicsComponent *component, *m_graphics)
-    {
-        if(component->componentName()==componentName)
-        {
-            return component;
-        }
-    }
-    return NULL;
 }

@@ -12,8 +12,8 @@ public:
     GraphicsComposite(QString componentName);
     virtual ~GraphicsComposite();
     virtual void add(GraphicsComponent *component);
-    virtual void remove(QString componentName);
-    virtual GraphicsComponent *findChild(QString componentName);
+    virtual void remove(GraphicsComponent *component);
+    virtual GraphicsComponent *findChild(int componentIndex);
     virtual QList<GraphicsComponent *> *findChildren();
     virtual void print();
 private:

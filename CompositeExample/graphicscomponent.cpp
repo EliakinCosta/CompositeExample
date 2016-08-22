@@ -5,12 +5,12 @@ void GraphicsComponent::add(GraphicsComponent *component)
     Q_ASSERT(false);
 }
 
-void GraphicsComponent::remove(QString componentName)
+void GraphicsComponent::remove(GraphicsComponent *component)
 {
      Q_ASSERT(false);
 }
 
-GraphicsComponent *GraphicsComponent::findChild(QString componentName)
+GraphicsComponent *GraphicsComponent::findChild(int componentIndex)
 {
      Q_ASSERT(false);
 }
